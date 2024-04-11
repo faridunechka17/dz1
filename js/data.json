@@ -1,0 +1,11 @@
+{
+  "name": "Farida",
+  "age": 18,
+  "isMarried": false,
+  "height": 1.52,
+  "address": {
+    "street": "Ibraimova 103",
+    "city": "Bishkek"
+  },
+  "favoriteColors": ["pink", "red"]
+}
