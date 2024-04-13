@@ -84,3 +84,6 @@ const resetTimer = () => {
     time = false
 }
 reset.onclick =() => resetTimer()
+
+
+//
