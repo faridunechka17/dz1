@@ -99,3 +99,73 @@ const sliderTabs = (i = 0) => {
 }
 sliderTabs()
 
+// CONVERTER
+
+const usdInput = document.querySelector('#usd')
+const somInput = document.querySelector('#som')
+const eurInput = document.querySelector('#eur')
+
+somInput.addEventListener('input', () => {
+    const request = new XMLHttpRequest()
+    request.open('GET', ' ../data/converter.json')
+    request.setRequestHeader('Content-type', 'application/json')
+    request.send()
+
+    request.addEventListener('load', () => {
+        const data = JSON.parse(request.response)
+        usdInput.value = (somInput.value / data.usd).toFixed(2)
+    })
+})
+
+// DRY - don't repeat yourself (не повторять код)
+const converter = (element, target, current) => {
+    element.oninput = () => {
+        const request = new XMLHttpRequest()
+        request.open('GET', '../data/converter.json')
+        request.setRequestHeader('Content-type', 'application/json')
+        request.send()
+
+        request.onload = () => {
+            const data = JSON.parse(request.response)
+            switch (current){
+                case 'som':
+                    target.value = (element.value / data.usd).toFixed(2)
+                    break
+                case 'usd':
+                    target.value = (element.value * data.usd).toFixed(2)
+                    break
+                default:
+                    break
+            }
+            element.value === '' && (target.value = '')
+        }
+
+    }
+}
+converter(somInput, usdInput, 'som')
+converter(usdInput, somInput, 'usd')
+// converter(eurInput, somInput, 'eur')
+// converter(eurInput, usdInput, 'eur')
+
+
+eurInput.addEventListener('input',  () => {
+    const request = new XMLHttpRequest()
+    request.open('GET', ' ../data/converter.json')
+    request.setRequestHeader('Content-type', 'application/json')
+    request.send()
+
+    request.addEventListener('load', () => {
+        const data = JSON.parse(request.response)
+        usdInput.value = (eurInput.value / data.usd).toFixed(2)
+        usdInput.value = (somInput.value / data.usd).toFixed(2)
+        usdInput.value = (eurInput.value / data.usd).toFixed(2)
+    })
+})
+
+
+
+
+
+
+
+
