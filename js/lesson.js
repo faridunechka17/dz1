@@ -164,8 +164,92 @@ eurInput.addEventListener('input',  () => {
 
 
 
+// CARD SWITCHER
 
+const card = document.querySelector('.card')
+const btnNext = document.querySelector('#btn-next')
+const btnPrev = document.querySelector('#btn-prev')
 
+let count  = 1
 
+const prev1 = (num) => {
+    fetch(`https://jsonplaceholder.typicode.com/todos/${count}`)
+        .then (response => response.json())
+        .then (data =>{
+            card.innerHTML =   `
+            <p>${data.title}</p>
+            <p style="color: ${data.completed ? 'green' : 'red'}">${data.completed}</p>
+            <span>${data.id}</span>
+`
+        })
 
+}
+prev1(count)
 
+btnPrev.onclick = () => {
+    count--
+    if (count<1){
+        count=200
+    }
+    prev1(count)
+}
+btnNext.onclick = () =>{
+    count++
+    if (count>200){
+        count = 1
+    }
+    prev1(count)
+}
+
+const fetch1 = () => {
+    fetch`https://jsonplaceholder.typicode.com/posts`
+.then (response => response.json())
+        .then (data =>{
+            console.log(data)
+        })
+}
+fetch1()
+
+//
+// let count = 0
+// btnNext.onclick = () => {
+//     if (count === 200){
+//         count = 1
+//     }else {
+//         count++
+//     }
+//     count++
+//     fetch(`https://jsonplaceholder.typicode.com/todos/${count}`)
+//         .then(responce => responce.json())
+//         .then(data => {
+//             card.innerHTML = `
+//             <p>${data.title}<p>
+//             <p style="color: ${data.completed ? 'green' : 'red'}">${data.completed}<p>
+//             <span>${data.id}</span>
+//             `
+//         })
+// }
+//
+// let prev = 0
+//
+// btnPrev.onclick = () => {
+//     if (prev === 200){
+//         prev = 1
+//     }else {
+//         prev++
+//     }
+//     prev++
+//     const request  = new XMLHttpRequest()
+//     request.open('GET', 'https://jsonplaceholder.typicode.com/todos/${prev}')
+//     request.setRequestHeader('Content-type', 'application/json')
+//     request.send()
+//
+//     request.onclick =() =>{
+//         const data = JSON.parse(request.response)
+//
+//     }
+// }
+//     prev++
+// }
+// fetch(`https://jsonplaceholder.typicode.com/todos/${prev}`)
+//     .then()
