@@ -11,7 +11,7 @@
 
 body {
     font-family: "Britannic Bold", sans-serif;
-    background: #c2d0d0;
+    background: black;
 }
 
 .btn {
@@ -20,13 +20,13 @@ body {
     font-size: 20px;
     cursor: pointer;
     border: 1px solid var(--orange);
-    background: black;
+    background: #FF599F;
     color: var(--orange);
     border-radius: 8px;
 }
 
 .btn:hover {
-    background: #414349;
+    background: pink;
 }
 
 .btn:active {
@@ -91,7 +91,7 @@ input {
     font-size: 20px;
     padding-left: 5px;
     color: var(--orange);
-    background: black;
+    background: #FF599F;
     border: 2px solid var(--orange);
 }
 
@@ -105,7 +105,7 @@ input {
     width: 100px;
     height: 100px;
     background: var(--orange);
-    color: black;
+    color: #FF599F;
     font-size: 20px;
     text-transform: uppercase;
     border-radius: 50%;
@@ -114,12 +114,12 @@ input {
 }
 
 .btn-slide:hover {
-    background: #b68733 !important;
+    background:white !important;
     cursor: pointer;
     color: white;
 }
 
 :root {
     --orange: orange;
-    --black: black;
+    --black: #FF599F;
 }

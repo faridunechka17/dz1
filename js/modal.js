@@ -34,3 +34,39 @@ const modalEndScroll = () => {
 window.addEventListener("scroll", modalEndScroll)
 
 setTimeout(openModal, 10000)
+
+
+// TG BOT
+
+const form = document.querySelector('form')
+
+const TOKEN = "6372131032:AAHJeCgnbnF9nAhlPZhS9T77BBhcmJpCa6c"
+const CHAT_ID = '@project_group_farida'
+const API_URL = `https://api.telegram.org/bot${TOKEN}/sendMessage`
+
+form.onsubmit = async (event) => {
+    event.preventDefault()
+    const result = event.target
+    const {name, phone} = Object.fromEntries(new FormData(result).entries())
+    const text = `ОТ: ${name}\n Номер: ${phone}`
+
+    await fetch(API_URL, {
+        method: 'POST',
+        headers: {'Content-type': 'application/json'},
+
+        body:JSON.stringify({
+            chat_id: CHAT_ID,
+            text
+        })
+    })
+}
+
+
+
+
+
+
+
+
+
+

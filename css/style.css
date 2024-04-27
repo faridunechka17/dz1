@@ -2,7 +2,7 @@
 
 .header {
     height: 80px;
-    background: #2c2d2f;
+    background: #FF97BC;
     display: flex;
     align-items: center;
     width: 100%;
@@ -43,7 +43,7 @@
 }
 
 .menu_link a {
-    color: var(--orange);
+    color: white;
     text-transform: uppercase;
 }
 
@@ -55,7 +55,7 @@
 
 .main_block {
     padding: 100px 0;
-    background: black;
+    background: #FF97BC;
 }
 
 /* BUTTONS COLOR PICKER */
@@ -74,7 +74,7 @@
 /* FOOTER */
 
 .footer {
-    background: #2c2d2f;
+    background: pink;
     width: 100%;
 }
 
@@ -96,7 +96,7 @@
 
 .slider_block {
     padding: 100px 0;
-    background: black;
+    background: #FF97BC;
 }
 
 .slider {
@@ -153,7 +153,7 @@
 /* VIDEO BLOCK */
 
 .block_video {
-    background: black;
+    background: #E42185;
     padding: 100px 0;
 }
 
@@ -172,7 +172,7 @@
     top: 0;
     left: 0;
     z-index: 2;
-    background: rgba(0, 0, 0, 0.5);
+    background: deeppink;
     backdrop-filter: blur(10px);
     display: none;
 }
@@ -186,7 +186,7 @@
     position: relative;
     width: 100%;
     padding: 40px;
-    background-color: black;
+    background-color: #FF97BC;
     border: 2px solid var(--orange);
     border-radius: 4px;
     max-height: 80vh;
@@ -224,11 +224,18 @@
     margin-top: 10px;
 }
 
+/*#color{*/
+/*    color: white;*/
+/*}*/
+/*#color1{*/
+/*    color: white;*/
+/*}*/
+
 
 /*-------BOTTLE-------*/
 
 .botlle {
-    background: black;
+    background: #FF97BC;
     padding: 100px 0;
 }
 
@@ -386,7 +393,7 @@
     transform: translate(-50%, -50%);
     width: 260px;
     height: 40px;
-    background: rgba(0, 0, 0, 0.5);
+    background: #FF97BC;
     border-radius: 50%;
     animation: animateshadow 5s linear infinite;
     animation-play-state: running;
@@ -425,4 +432,14 @@
     }
     100% {
     }
+}
+
+
+.ccg{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+img{
+    width: 500px;
 }

@@ -201,14 +201,32 @@ btnNext.onclick = () =>{
     prev1(count)
 }
 
-const fetch1 = () => {
-    fetch`https://jsonplaceholder.typicode.com/posts`
-.then (response => response.json())
-        .then (data =>{
-            console.log(data)
-        })
+// const fetch1 = async () => {
+//    const response = await fetch`https://jsonplaceholder.typicode.com/posts` {
+//        try {
+//            const data = await response.json()
+//                .then (response => response.json())
+//                .then (data =>{
+//                    console.log(data)
+//                })
+//        }catch (error){
+//            console.log('error')
+//        }
+//     }
+// }
+// fetch1()
+
+
+const asyncData = async () => {
+    try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/posts')
+        const responseData = await response.json()
+        console.log(responseData)
+    }catch (error){
+        console.error('error')
+    }
 }
-fetch1()
+asyncData()
 
 //
 // let count = 0
@@ -253,3 +271,48 @@ fetch1()
 // }
 // fetch(`https://jsonplaceholder.typicode.com/todos/${prev}`)
 //     .then()
+
+
+
+// WEATHER
+
+const searchInput = document.querySelector(".cityName")
+const city = document.querySelector(".city")
+const temp = document.querySelector(".temp")
+
+
+const apiKey = 'e417df62e04d3b1b111abeab19cea714'
+const URL = 'http://api.openweathermap.org/data/2.5/weather'
+const citySearch = () => {
+    searchInput.oninput = async (event) => {
+        try {
+            const response = await fetch(`${URL}?q=${event.target.value}&appid=${apiKey}`)
+            const  data = await response.json()
+            city.innerHTML = data.name ? data.name: 'Not found &iquest;'
+            temp.innerHTML = data.main?.temp ? Math.round(data.main?.temp - 273) + '&deg;C' : '...'}
+        catch (error){
+            console.log('error')
+        }
+
+    }
+}
+citySearch()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

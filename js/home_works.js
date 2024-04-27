@@ -1,22 +1,23 @@
 //dz1(1)
 
-const gmailInput = document.querySelector('#gmail_input')
-const gmailButton = document.querySelector('#gmail_button')
-const gmailSpan = document.querySelector('#gmail_result')
+const input = document.querySelector('#gmail_input')
+const button = document.querySelector('#gmail_button')
+const result = document.querySelector('#gmail_result')
 
+const regExp =/^\w[a-z][a-zA-Z0-9._]+@gmail.com$/i
+button.onclick = () => {
+    if (regExp.test(input.value)) {
+        result.innerHTML = 'ok'
+        result.style.color ='green'
 
-const regExp = /^\w[a-z0-9._]+@gmail.com$/i
-gmailButton.onclick = () => {
-    if (regExp.test(gmailInput.value)){
-        gmailSpan.innerHTML = 'ok'
-        gmailSpan.style.color = 'green'
-    }else {
-        gmailSpan.innerHTML = 'not ok'
-        gmailSpan.style.color = 'red'
+    }
+    else {
+        result.innerHTML = 'not ok'
+        result.style.color = 'red'
     }
 }
 
-//dz1(2)
+// dz1(2)
 
 const blockChild = document.querySelector('.child_block')
 const blockParent = document.querySelector('.parent_block')
@@ -25,10 +26,10 @@ let positionY = 0
 const mainWidth = blockParent.offsetWidth - blockChild.offsetWidth
 const mainHeight = blockParent.offsetHeight - blockChild.offsetHeight
 
-//
-// // const blockRed = blockParent.offsetWidth
-// let right = 0
-// const blockWidth = 448
+
+// const blockRed = blockParent.offsetWidth
+let right = 0
+const blockWidth = 448
 
 const blockInput = () => {
     blockChild.style.left = `${positionX}px`
@@ -85,5 +86,33 @@ const resetTimer = () => {
 }
 reset.onclick =() => resetTimer()
 
+//
+
+
+// card dz
+
+// const cardHome = document.querySelector('.card')
+//
+// const getCard = async () => {
+//     const response = await fetch(`https://jsonplaceholder.typicode.com/todos/1`)
+//     const data = await response.json()
+//     console.log(data)
+//
+//     cardHome.innerHTML = `
+//     <img src="${`https://avatanplus.com/files/resources/original/56db1074e856715347b848d8.png`}" alt="img">
+//     <p>${data.title}</p>
+//     <span>${data.body}</span>
+//     `
+// }
+
+
+// getCard()
+
+
 
 //
+//
+//
+//
+
+

@@ -2,7 +2,7 @@
 /* GMAIL BLOCK */
 
 .gmail_block {
-    background: black;
+    background: #FF97BC;
     padding: 100px 0;
 }
 
@@ -30,7 +30,7 @@
 /* MOVE BLOCK */
 
 .move_block {
-    background: black;
+    background: #FF97BC;
     padding: 100px 0;
 }
 
@@ -141,7 +141,7 @@
     font-size: 36px;
     font-weight: 900;
     position: absolute;
-    background: #000;
+    background: #FF97BC;
     z-index: 10;
     right: calc(var(--clock-size)/ 4.5);
     top: 50%;
@@ -182,7 +182,7 @@
 
 .stopwatch {
     padding: 100px 0;
-    background: black;
+    background: #FF97BC;
 }
 
 .time_buttons {
