@@ -57,9 +57,8 @@ const request = async () => {
                   <p>${card.body}</p>
                 `
             ccg.append(change)
-
         })
-    }catch (error){
+    } catch (error) {
         console.log('err')
     }
 }

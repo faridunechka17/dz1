@@ -86,33 +86,4 @@ const resetTimer = () => {
 }
 reset.onclick =() => resetTimer()
 
-//
-
-
-// card dz
-
-// const cardHome = document.querySelector('.card')
-//
-// const getCard = async () => {
-//     const response = await fetch(`https://jsonplaceholder.typicode.com/todos/1`)
-//     const data = await response.json()
-//     console.log(data)
-//
-//     cardHome.innerHTML = `
-//     <img src="${`https://avatanplus.com/files/resources/original/56db1074e856715347b848d8.png`}" alt="img">
-//     <p>${data.title}</p>
-//     <span>${data.body}</span>
-//     `
-// }
-
-
-// getCard()
-
-
-
-//
-//
-//
-//
-
 
